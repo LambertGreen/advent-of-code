@@ -29,3 +29,32 @@ print("result with input: {}".format(get_increase_count(read('input.txt'))))
 : result with sample_input: 7
 : result with input: 1583
 *** Part 2
+#+begin_src python :results output
+def get_increase_count(nums):
+    window_size = 3
+    count = 0
+    prev_window_sum = 0;
+    for i in range(window_size):
+        prev_window_sum += nums[i]
+    for i in range(window_size, len(nums)):
+        curr_window_sum = prev_window_sum - nums[i - window_size] + nums[i]
+        if curr_window_sum > prev_window_sum:
+            count += 1
+        prev_window_sum = curr_window_sum
+    return count
+
+def read(filename):
+    input = []
+    with open(filename, 'r') as f:
+        for line in f:
+            for num in line.split():
+                input.append(int(num))
+    return input
+
+print("result with sample_input: {}".format(get_increase_count(read('sample_input.txt'))))
+print("result with input: {}".format(get_increase_count(read('input.txt'))))
+#+end_src
+
+#+RESULTS:
+: result with sample_input: 5
+: result with input: 1627
