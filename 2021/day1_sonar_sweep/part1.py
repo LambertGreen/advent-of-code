@@ -13,7 +13,7 @@ def get_increase_count(nums):
 def read(filename):
     input = []
     with open(filename, 'r') as f:
-        for line in f:
+       for line in f:
             for num in line.split():
                 input.append(int(num))
     return input
