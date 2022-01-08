@@ -4,8 +4,7 @@
 ** Reading numbers from file
 #+begin_src python :results output
 def read(filename):
-    with open(filename, 'r') as f:
-        return [int(x) for x in f.readlines()]
+    return [int(num) for num in open(filename)]
 
 read('sample_input.txt')
 #+end_src
@@ -16,15 +15,12 @@ read('sample_input.txt')
 ** Part 1
 #+begin_src python :results output
 def read(filename):
-    with open(filename, 'r') as f:
-        return [int(x) for x in f.readlines()]
+    return [int(num) for num in open(filename)]
 
 def get_increase_count(nums):
     count = 0
     for i in range(1, len(nums)):
-        prev = nums[i - 1]
-        curr = nums[i]
-        if curr > prev:
+        if nums[i] > nums[i - 1]:
             count += 1
     return count
 
@@ -38,8 +34,7 @@ print("result with input: {}".format(get_increase_count(read('input.txt'))))
 ** Part 2
 #+begin_src python :results output
 def read(filename):
-    with open(filename, 'r') as f:
-        return [int(x) for x in f.readlines()]
+    return [int(num) for num in open(filename)]
 
 def get_increase_count(nums):
     window_size = 3
