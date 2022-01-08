@@ -21,12 +21,8 @@ def get_increase_count(nums):
     return count
 
 def read(filename):
-    input = []
     with open(filename, 'r') as f:
-        for line in f:
-            for num in line.split():
-                input.append(int(num))
-    return input
+        return [int(x) for x in f.readlines()]
 
 print("result with sample_input: {}".format(get_increase_count(read('sample_input.txt'))))
 print("result with input: {}".format(get_increase_count(read('input.txt'))))
