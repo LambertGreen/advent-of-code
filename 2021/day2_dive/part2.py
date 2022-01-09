@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
+
 def read(filename):
-    with open(filename, 'r') as f:
+    with open(filename, "r") as f:
         return [line.split() for line in f]
+
 
 def get_position(commands):
     horizontal = 0
@@ -25,4 +27,5 @@ def get_position(commands):
 
     return horizontal * depth
 
-get_position(read('input.txt'))
+
+get_position(read("input.txt"))
