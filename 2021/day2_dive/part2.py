@@ -28,4 +28,4 @@ def get_position(commands):
     return horizontal * depth
 
 
-get_position(read("input.txt"))
+print(get_position(read("input.txt")))
